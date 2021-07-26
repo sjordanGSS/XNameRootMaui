@@ -1,0 +1,7 @@
+{
+  "profiles": {
+    "MauiTest4.WinUI": {
+      "commandName": "MsixPackage"
+    }
+  }
+}

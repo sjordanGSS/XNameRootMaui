@@ -1,0 +1,15 @@
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiTest4.MainPage"
+             BackgroundColor="{DynamicResource PageBackgroundColor}">
+    <CollectionView x:Name="collection">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout x:Name="root">
+                    <Button Text="Tap me!"
+                            Clicked="Button_Clicked" />
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+</ContentPage>

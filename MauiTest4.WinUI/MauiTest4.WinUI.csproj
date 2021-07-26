@@ -1,0 +1,43 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net6.0-windows10.0.19041</TargetFrameworks>
+		<RuntimeIdentifier>win-x64</RuntimeIdentifier>
+		<OutputType>WinExe</OutputType>
+		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<RootNamespace>MauiTest4</RootNamespace>
+
+		<!-- Required - Enable Single Project for WinUI -->
+		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
+		<WindowsPackageType>MSIX</WindowsPackageType>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<!-- App Icon -->
+		<MauiImage Include="..\MauiTest4\Resources\appicon.svg" Link="Resources\appicon.svg" ForegroundFile="..\MauiTest4\Resources\appiconfg.svg" IsAppIcon="true" Color="#512BD4" />
+
+		<!-- Splash Screen -->
+		<MauiSplashScreen Include="..\MauiTest4\Resources\appiconfg.svg" Link="Resources\appiconfg.svg" Color="#512BD4" />
+
+		<!-- Images -->
+		<MauiImage Include="..\MauiTest4\Resources\Images\*" Link="Resources\Images\%(Filename)%(Extension)" />
+
+		<!-- Custom Fonts -->
+		<MauiFont Include="..\MauiTest4\Resources\Fonts\*" Link="Resources\Fonts\%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<Compile Include="..\MauiTest4\**\*.cs" Exclude="..\MauiTest4\bin\**;..\MauiTest4\obj\**;..\MauiTest4\Platforms\**" Link="%(RecursiveDir)%(Filename)%(Extension)" />
+		<MauiXaml Include="..\MauiTest4\**\*.xaml" Exclude="..\MauiTest4\bin\**;..\MauiTest4\obj\**" Link="%(RecursiveDir)%(FileName)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.ProjectReunion" Version="0.8.1" />
+		<PackageReference Include="Microsoft.ProjectReunion.Foundation" Version="0.8.1" />
+		<PackageReference Include="Microsoft.ProjectReunion.WinUI" Version="0.8.1" />
+		<PackageReference Include="Microsoft.ProjectReunion.InteractiveExperiences" Version="0.8.1" NoWarn="NU1701" />
+	</ItemGroup>
+
+</Project>
